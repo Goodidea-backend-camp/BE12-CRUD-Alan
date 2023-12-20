@@ -1,0 +1,27 @@
+body {
+  margin-inline: 25%;
+}
+
+li {
+  position: relative;
+  padding-inline-start: 40px;
+  list-style: none;
+  margin-block: 1rem;
+}
+
+li::before {
+  content: '';
+  display: inline-block;
+  width: 30px; /* Set the width of the user icon */
+  height: 30px; /* Set the height of the user icon */
+  background: url('dog.png') center center no-repeat;
+  background-size: cover; /* Adjust as needed */
+
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+.marked {
+  border: 2px dashed pink;
+}
