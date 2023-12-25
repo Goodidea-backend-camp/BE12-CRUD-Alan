@@ -21,9 +21,10 @@
             <button>send</button>
           </form>
         </div>
-        <!-- toggle the edit view -->
         <div>
+          <!-- toggle the edit view -->
           <button class="edit-btn" data-id="<?= $message['id'] ?>">edit</button>
+          <!-- click delete button to submit the delete form beneath -->
           <button class="delete-btn" data-id="<?= $message['id'] ?>">delete</button>
         </div>
         <form action="/message" method="POST" class="hidden" data-id="<?= $message['id'] ?>">
@@ -78,8 +79,6 @@
   deleteBtns.forEach(btn => {
     btn.addEventListener('click', () => document.querySelector(`form[data-id="${btn.dataset.id}"]`).submit());
   });
-
-
 </script>
 
 <?php require base_path('views/partials/footer.php');?>

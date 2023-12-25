@@ -3,7 +3,6 @@
 use Core\Database;
 use Core\Session;
 
-
 // hard-coded for testing. would be changed when implementing authentication
 $currentUserID = 4;
 
@@ -17,7 +16,7 @@ if (empty(trim($message))) {
   Session::flash('error', 'message cannot be empty!');
 } else {
   $db->query('INSERT INTO messages(body, user_id) VALUES(:body, :user_id)', [
-    'body' => $_POST['body'],
+    'body' => $message,
     'user_id' => $currentUserID
   ]);
 }

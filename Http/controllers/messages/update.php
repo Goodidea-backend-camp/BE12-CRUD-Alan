@@ -16,7 +16,6 @@ if (!$message) {
 }
 
 if ($currentUserID === $message['user_id']) {
-  dd($message['user_id']);
   $db->query('update messages set body = :body where id = :id', [
     'id' => $_POST['id'],
     'body' => $_POST['body']
