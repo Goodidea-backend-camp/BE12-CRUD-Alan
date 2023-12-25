@@ -1,5 +1,5 @@
 body {
-  margin-inline: 25%;
+  margin-inline: 30%;
 }
 
 li {
@@ -22,6 +22,18 @@ li::before {
   top: 5px;
 }
 
-.marked {
+.author-name {
   border: 2px dashed pink;
+}
+
+ul {
+  padding: 0;
+}
+
+input[name="body"] {
+  padding: 5px;
+}
+
+.error {
+  color: red;
 }
