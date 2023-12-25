@@ -5,7 +5,7 @@ use Core\Session;
 
 
 // hard-coded for testing. would be changed when implementing authentication
-$currentID = 3;
+$currentUserID = 3;
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);
@@ -18,7 +18,7 @@ if (empty(trim($message))) {
 } else {
   $db->query('INSERT INTO messages(body, user_id) VALUES(:body, :user_id)', [
     'body' => $_POST['body'],
-    'user_id' => $currentID
+    'user_id' => $currentUserID
   ]);
 }
 

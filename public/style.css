@@ -22,8 +22,13 @@ li::before {
   top: 5px;
 }
 
-.author-name {
+.author {
   border: 2px dashed pink;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 ul {
@@ -36,4 +41,8 @@ input[name="body"] {
 
 .error {
   color: red;
+}
+
+.hidden {
+  display: none;
 }
