@@ -14,7 +14,7 @@ $messages = $db->query('
 ')->fetchAll();
 
 // hard-coded for now, would be changed when implementing authentication
-$currentUserID = 4;
+$currentUserID = 3;
 
 // flash error message, only used for next request
 $error = null;

@@ -5,7 +5,7 @@ use Core\Session;
 
 
 // hard-coded for testing. would be changed when implementing authentication
-$currentUserID = 3;
+$currentUserID = 4;
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);

@@ -22,7 +22,14 @@
           </form>
         </div>
         <!-- toggle the edit view -->
-        <button class="edit-btn" data-id="<?= $message['id'] ?>">edit</button>
+        <div>
+          <button class="edit-btn" data-id="<?= $message['id'] ?>">edit</button>
+          <button class="delete-btn" data-id="<?= $message['id'] ?>">delete</button>
+        </div>
+        <form action="/message" method="POST" class="hidden" data-id="<?= $message['id'] ?>">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="hidden" name="id" value="<?= $message['id']?>">
+        </form>
       </li>
     <?php else: ?>
       <li>
@@ -44,7 +51,7 @@
 <?php endif; ?>
 
 <script>
-  // addEventListener to each button, which would toggle each view-block and edit-block
+  // add event listener to each edit button, which would toggle each view-block and edit-block
   const editBtns = document.querySelectorAll('.edit-btn');
 
   editBtns.forEach(btn => {
@@ -65,6 +72,14 @@
       btn.textContent = 'edit';
     }
   }
+
+  // add event listener to each delete button, which would submit the delete form
+  const deleteBtns = document.querySelectorAll('.delete-btn');
+  deleteBtns.forEach(btn => {
+    btn.addEventListener('click', () => document.querySelector(`form[data-id="${btn.dataset.id}"]`).submit());
+  });
+
+
 </script>
 
 <?php require base_path('views/partials/footer.php');?>
