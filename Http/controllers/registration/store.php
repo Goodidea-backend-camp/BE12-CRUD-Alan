@@ -37,9 +37,9 @@ if(!$user) {
     'password' => password_hash($password, PASSWORD_BCRYPT) 
   ]);
 
-  $temporaryMessage = 'Registered successfully!';
+  $temporaryMessage = 'Registration succeeded';
 } else {
-  $temporaryMessage = 'This email had already been registered.';
+  $temporaryMessage = 'Registration failed';
 }
 
 return view('temporary.view.php', [
