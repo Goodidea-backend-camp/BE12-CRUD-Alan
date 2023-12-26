@@ -1,5 +1,6 @@
 <?php require base_path('views/partials/head.php');?>
 <?php use \Core\Session; ?>
+
 <?php if (Session::has('user')): ?>
   <p> Hello, <?= Session::get('user')['name'] ?> </p>
   <form action="/session" method="POST">
@@ -9,17 +10,20 @@
 <?php else: ?>
   <?php require base_path('views/partials/nav.php'); ?>
 <?php endif; ?>
+<!-- message board -->
+<!-- list all messages -->
 <ul>
   <?php foreach($messages as $message):?>
-    <!-- marked the author's own messages -->
+    <!-- author's own messages: colored border, edit/delete button -->
     <?php if ($message['user_id'] === $currentUserID): ?>
       <li class="author">
+        <!-- view block: display message -->
         <div class="view-block" data-id="<?= $message['id'] ?>">
           <b><?= $message['name'] ?></b>
           <br />
           <?= htmlspecialchars($message['body']) ?>
         </div>
-
+        <!-- edit block: edit the message -->
         <div class="edit-block hidden" data-id="<?= $message['id'] ?>">
           <b><?= $message['name'] ?></b>
           <br />
@@ -30,17 +34,21 @@
             <button>send</button>
           </form>
         </div>
+
         <div>
-          <!-- toggle the edit view -->
+          <!-- toggle edit <-> view -->
           <button class="edit-btn" data-id="<?= $message['id'] ?>">edit</button>
           <!-- click delete button to submit the delete form beneath -->
           <button class="delete-btn" data-id="<?= $message['id'] ?>">delete</button>
         </div>
+
+        <!-- delete form: use delete button to submit this form -->
         <form action="/message" method="POST" class="hidden" data-id="<?= $message['id'] ?>">
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="id" value="<?= $message['id']?>">
         </form>
       </li>
+    <!-- display other's message normally-->
     <?php else: ?>
       <li>
         <b><?= $message['name'] ?></b>
@@ -51,11 +59,13 @@
   <?php endforeach;?>
 </ul>
 
+<!-- user create message here-->
 <form action="/messages" method="POST">
   <input type="text" name="body">
   <button>send</button>
 </form>
 
+<!-- display error -->
 <?php if (!is_null($error)): ?>
   <p class="error"><?= $error ?></p>
 <?php endif; ?>
