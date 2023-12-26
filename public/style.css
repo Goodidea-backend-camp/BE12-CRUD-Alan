@@ -1,0 +1,88 @@
+body {
+  margin-inline: 30%;
+}
+
+li {
+  position: relative;
+  padding-inline-start: 40px;
+  list-style: none;
+  margin-block: 1rem;
+}
+
+li::before {
+  content: '';
+  display: inline-block;
+  width: 30px; /* Set the width of the user icon */
+  height: 30px; /* Set the height of the user icon */
+  background: url('dog.png') center center no-repeat;
+  background-size: cover; /* Adjust as needed */
+
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+.author {
+  border: 2px dashed pink;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  padding: 0;
+}
+
+input[name="body"] {
+  padding: 5px;
+}
+
+.error {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+form input:hover {
+  background-color: whitesmoke;
+}
+
+/* registration & login page */
+
+#registration-form,
+#login-form {
+  padding: 5%;
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;  */
+}
+
+#registration-form input,
+#login-form input {
+  padding: .5rem;
+  margin-block-start: 1rem;
+}
+
+#registration-form button,
+#login-form button {
+  padding: .5rem;
+}
+
