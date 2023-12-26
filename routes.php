@@ -15,3 +15,9 @@ $router->delete('/message', 'messages/destroy.php');
 // register
 $router->get('/register', 'registration/create.php');
 $router->post('/register', 'registration/store.php');
+
+// login & logout (create & destroy session)
+$router->get('/login', 'session/create.php');
+$router->post('/session', 'session/store.php');
+$router->delete('/session', 'session/destroy.php');
+

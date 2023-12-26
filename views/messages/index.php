@@ -1,5 +1,14 @@
 <?php require base_path('views/partials/head.php');?>
-<?php require base_path('views/partials/nav.php');?>
+<?php use \Core\Session; ?>
+<?php if (Session::has('user')): ?>
+  <p> Hello, <?= Session::get('user') ?> </p>
+  <form action="/session" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button>log out</button>
+  </form>
+<?php else: ?>
+  <?php require base_path('views/partials/nav.php'); ?>
+<?php endif; ?>
 <ul>
   <?php foreach($messages as $message):?>
     <!-- marked the author's own messages -->

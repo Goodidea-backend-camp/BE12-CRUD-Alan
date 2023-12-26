@@ -59,9 +59,14 @@ input[name="body"] {
   border-width: 0;
 }
 
-/* registration */
+form input:hover {
+  background-color: whitesmoke;
+}
 
-#registration-form {
+/* registration & login page */
+
+#registration-form,
+#login-form {
   padding: 5%;
 
   /* display: flex;
@@ -70,15 +75,14 @@ input[name="body"] {
   gap: 1em;  */
 }
 
-#registration-form input {
+#registration-form input,
+#login-form input {
   padding: .5rem;
   margin-block-start: 1rem;
 }
 
-#registration-form input:hover {
-  background-color: whitesmoke;
-}
-
-#registration-form button {
+#registration-form button,
+#login-form button {
   padding: .5rem;
 }
+
