@@ -7,5 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Core\\Database' => $baseDir . '/Core/Database.php',
+    'Core\\Middleware\\Authenticated' => $baseDir . '/Core/Middleware/Authenticated.php',
+    'Core\\Middleware\\Guest' => $baseDir . '/Core/Middleware/Guest.php',
+    'Core\\Middleware\\Middleware' => $baseDir . '/Core/Middleware/Middleware.php',
     'Core\\Router' => $baseDir . '/Core/Router.php',
+    'Core\\Session' => $baseDir . '/Core/Session.php',
 );

@@ -15,11 +15,13 @@ $user = $db->query('SELECT * FROM users WHERE email = :email', [
 
 if ($user) {
   if (password_verify($password, $user['password'])) {
-    Session::put('user', $email);
+    Session::put('user', [
+      'name' => $user['name'],
+      'id' => $user['id']
+    ]);
     header('location: /');
     exit();
   }
-  // think about how to check the session contains the user, and fulfill logout and set different permission to different pages(using middleware)
 }
 
 // return to the login page if the credentials are wrong or the email is not found

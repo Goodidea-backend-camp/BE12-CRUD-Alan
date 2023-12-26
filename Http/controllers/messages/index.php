@@ -13,8 +13,7 @@ $messages = $db->query('
   LEFT JOIN users on messages.user_id = users.id
 ')->fetchAll();
 
-// hard-coded for now, would be changed when implementing authentication
-$currentUserID = 3;
+$currentUserID = Session::get('user')['id'];
 
 // flash error message, only used for next request
 $error = null;

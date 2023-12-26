@@ -1,5 +1,8 @@
+<?php use Core\Session; ?>
 <nav>
-  <a href="/">board</a>
+  <?php if (Session::has('user')): ?>
+    <a href="/">board</a>
+  <?php endif;?>
   <a href="/register">register</a>
   <a href="/login">login</a>
 </nav>

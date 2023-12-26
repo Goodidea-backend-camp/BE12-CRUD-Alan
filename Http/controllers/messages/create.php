@@ -3,8 +3,7 @@
 use Core\Database;
 use Core\Session;
 
-// hard-coded for testing. would be changed when implementing authentication
-$currentUserID = 4;
+$currentUserID = Session::get('user')['id'];
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);

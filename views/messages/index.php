@@ -1,7 +1,7 @@
 <?php require base_path('views/partials/head.php');?>
 <?php use \Core\Session; ?>
 <?php if (Session::has('user')): ?>
-  <p> Hello, <?= Session::get('user') ?> </p>
+  <p> Hello, <?= Session::get('user')['name'] ?> </p>
   <form action="/session" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <button>log out</button>

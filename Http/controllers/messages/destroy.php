@@ -1,11 +1,12 @@
 <?php
 
 use Core\Database;
+use Core\Session;
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);
 
-$currentUserID = 4;
+$currentUserID = Session::get('user')['id'];
 
 $message = $db->query('SELECT * FROM messages WHERE id = :id', [
   'id' => $_POST['id']

@@ -30,7 +30,12 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Core\\Database' => __DIR__ . '/../..' . '/Core/Database.php',
+        'Core\\Middleware\\Authenticated' => __DIR__ . '/../..' . '/Core/Middleware/Authenticated.php',
+        'Core\\Middleware\\Guest' => __DIR__ . '/../..' . '/Core/Middleware/Guest.php',
+        'Core\\Middleware\\Middleware' => __DIR__ . '/../..' . '/Core/Middleware/Middleware.php',
         'Core\\Router' => __DIR__ . '/../..' . '/Core/Router.php',
+        'Core\\Session' => __DIR__ . '/../..' . '/Core/Session.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
