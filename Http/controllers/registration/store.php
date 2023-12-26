@@ -38,10 +38,13 @@ if(!$user) {
   ]);
 
   $temporaryMessage = 'Registration succeeded';
+  $redirectLocation = '/login';
 } else {
   $temporaryMessage = 'Registration failed';
+  $redirectLocation = '/register';
 }
 
 return view('temporary.view.php', [
-  'temporaryMessage' => $temporaryMessage
+  'temporaryMessage' => $temporaryMessage,
+  'redirectLocation' => $redirectLocation
 ]);

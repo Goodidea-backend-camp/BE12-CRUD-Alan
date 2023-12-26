@@ -1,6 +1,6 @@
 <?php require base_path('views/partials/head.php');?>
 
-<h1><?=$temporaryMessage?> <br>Redirect to home page in 3 seconds</h1>
+<h1><?=$temporaryMessage?> <br>Redirect in 3 seconds</h1>
 
 <style>
   body {
@@ -10,7 +10,7 @@
 
 <script>
   setTimeout(function() {
-      window.location.href = '/';
+      window.location.href = "<?= $redirectLocation ?>";
   }, 3000); 
 </script>
 
