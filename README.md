@@ -1,6 +1,12 @@
 # BE12-CRUD-Alan
 a message board without using framework
 
+## how to run locally
+1. clone this repo
+2. cd to the cloned repo
+3. `$ php -S localhost:8000 -t public`
+4. visit `localhost:8000` in your browser
+
 ## page flow
 
 ![page-flow](page-flow.png)
