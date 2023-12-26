@@ -1,5 +1,5 @@
 <?php require base_path('views/partials/head.php');?>
-
+<?php require base_path('views/partials/nav.php');?>
 <ul>
   <?php foreach($messages as $message):?>
     <!-- marked the author's own messages -->

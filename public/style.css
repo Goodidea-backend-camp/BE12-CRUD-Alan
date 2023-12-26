@@ -46,3 +46,39 @@ input[name="body"] {
 .hidden {
   display: none;
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* registration */
+
+#registration-form {
+  padding: 5%;
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;  */
+}
+
+#registration-form input {
+  padding: .5rem;
+  margin-block-start: 1rem;
+}
+
+#registration-form input:hover {
+  background-color: whitesmoke;
+}
+
+#registration-form button {
+  padding: .5rem;
+}
