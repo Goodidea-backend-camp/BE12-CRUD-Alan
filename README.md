@@ -1,5 +1,10 @@
 # BE12-CRUD-Alan
 a message board without using framework
+
+## page flow
+
+![page-flow](page-flow.png)
+
 ## goal
 to build a message board where authorized users can post, view, edit, delete messages
 ## tasks
